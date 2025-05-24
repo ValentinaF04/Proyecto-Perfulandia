@@ -14,21 +14,21 @@ import lombok.NoArgsConstructor;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCliente;
+    private Long id;
+
+    @Column(name = "usuario_id")
+    private Long usuarioId;
+
+    @Column(name = "nombre_completo", length = 100)
+    private String nombreCompleto;
 
     @Column(unique = true, length = 12, nullable = false)
     private String rut;
 
-    @Column(nullable = false)
-    private String nombre;
-
-    @Column(nullable = false)
-    private String apellido;
-
-    @Column(unique = true, length = 15)
+    @Column(length = 15)
     private String telefono;
 
-    @Column(columnDefinition = "TEXT",nullable = false)
+    @Column(columnDefinition = "TEXT")
     private String direccion;
 
 }

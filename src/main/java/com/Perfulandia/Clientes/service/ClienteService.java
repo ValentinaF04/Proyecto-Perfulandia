@@ -16,20 +16,41 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public Cliente save(Cliente cliente){
+    public Cliente saveCliente(Cliente cliente){
         return clienteRepository.save(cliente);
     }
 
-    public Optional<Cliente> getCliente(String rut){
+    public Optional<Cliente> getClienteByRut(String rut){
         return clienteRepository.findByRut(rut);
     }
 
-    public List<Cliente> findAll(){
+    public Optional<Cliente> getClienteById(Long id){
+        return clienteRepository.findById(id);
+    }
+    public List<Cliente> getAllClientes(){
         return clienteRepository.findAll();
     }
 
-    public void delete(Long id){
-        clienteRepository.deleteById(id);
+    public Cliente updateCliente(Long id, Cliente clienteDetails){
+        Cliente cliente = clienteRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
+
+        cliente.setUsuarioId(clienteDetails.getUsuarioId());
+        cliente.setNombreCompleto(clienteDetails.getNombreCompleto());
+        cliente.setRut(clienteDetails.getRut());
+        cliente.setTelefono(clienteDetails.getTelefono());
+        cliente.setDireccion(clienteDetails.getDireccion());
+
+        return clienteRepository.save(cliente);
+    }
+
+    public boolean deleteCliente(Long id){
+        if (clienteRepository.existsById(id)){
+            clienteRepository.deleteById(id);
+            return true;
+        } else{
+            return false;
+        }
     }
 
 }
