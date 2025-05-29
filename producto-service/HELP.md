@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.perfulandia.producto-service' is invalid and this project uses 'com.perfulandia.producto_service' instead.
+* The original package name 'com.perfulandia.productos.producto-service' is invalid and this project uses 'com.perfulandia.productos.producto_service' instead.
 
 # Getting Started
 
@@ -9,11 +9,11 @@ The following was discovered as part of building this project:
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.5/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.5/maven-plugin/build-image.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.5/reference/web/servlet.html)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/3.4.5/reference/data/sql.html#data.sql.jpa-and-spring-data)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.4.5/reference/using/devtools.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.5.0/maven-plugin)
+* [Create an OCI image](https://docs.spring.io/spring-boot/3.5.0/maven-plugin/build-image.html)
+* [Spring Web](https://docs.spring.io/spring-boot/3.5.0/reference/web/servlet.html)
+* [Spring Data JPA](https://docs.spring.io/spring-boot/3.5.0/reference/data/sql.html#data.sql.jpa-and-spring-data)
+* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.5.0/reference/using/devtools.html)
 
 ### Guides
 The following guides illustrate how to use some features concretely:
