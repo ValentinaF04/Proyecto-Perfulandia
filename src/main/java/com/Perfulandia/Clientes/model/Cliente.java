@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name= "clientes")
 @Data
@@ -31,4 +34,10 @@ public class Cliente {
     @Column(columnDefinition = "TEXT")
     private String direccion;
 
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(name = "cliente_productos_comprados",
+            joinColumns = @JoinColumn(name = "cliente_id"))
+    @Column(name = "producto_id")
+    private List<Long> idsProductosComprados = new ArrayList<>();
 }
+
